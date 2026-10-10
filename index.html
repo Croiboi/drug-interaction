@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Drug Interaction Explorer</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">Clinical safety tool</p>
+          <h1>Drug Interaction Explorer</h1>
+          <p class="hero-text">
+            Explore common medication interactions, review severity, and get a quick safety summary.
+          </p>
+        </div>
+        <div class="hero-card">
+          <h2>How it works</h2>
+          <ul>
+            <li>Search by medication name</li>
+            <li>Filter by risk level</li>
+            <li>Review caution notes and recommendations</li>
+          </ul>
+        </div>
+      </header>
+
+      <section class="controls">
+        <label class="field">
+          <span>Search drugs</span>
+          <input id="searchInput" type="text" placeholder="Try warfarin, statin, aspirin..." />
+        </label>
+
+        <label class="field">
+          <span>Severity</span>
+          <select id="severityFilter">
+            <option value="all">All severities</option>
+            <option value="High">High</option>
+            <option value="Moderate">Moderate</option>
+            <option value="Low">Low</option>
+          </select>
+        </label>
+      </section>
+
+      <section class="results-header">
+        <p id="resultsCount">Loading interactions...</p>
+      </section>
+
+      <main class="content-grid">
+        <section id="cardList" class="card-list" aria-label="Interaction cards"></section>
+        <aside id="detailPanel" class="detail-panel" aria-live="polite"></aside>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
